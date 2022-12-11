@@ -1,0 +1,17 @@
+<!ELEMENT invoice (invoiceno,invoicedate,customer+,items+)>
+<!ELEMENT invoiceno (#PCDATA)> 
+<!ELEMENT invoicedate (#PCDATA)>
+<!ELEMENT customer (customerno,customername,customeraddress,customeremail,customerphno)>
+<!ELEMENT customerno (#PCDATA)>
+<!ELEMENT customername (#PCDATA)>
+<!ELEMENT customeraddress (#PCDATA)>
+<!ELEMENT customeremail (#PCDATA)>
+<!ELEMENT customerphno (#PCDATA)>  
+<!ELEMENT items (item+)>
+<!ELEMENT item (itemno,itemname,unit,price,quantity,total)>
+<!ELEMENT itemno (#PCDATA)>
+<!ELEMENT itemname (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT unit (#PCDATA)> 
+<!ELEMENT total (#PCDATA)> 

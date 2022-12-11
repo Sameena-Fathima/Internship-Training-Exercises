@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Country Capital</title>
+</head>
+<body>
+
+    Enter a country Name: <input type="text" id="country" value="">
+    <p id="city"></p>
+    <button onclick="getCapital();">Get Capital</button>
+
+
+    <script>
+        var map=new Map();
+        map.set("India","Delhi");
+        map.set("Bangladesh","Dhaka");
+        map.set("United Kingdom","London");
+        map.set("Oman","Muscat");
+        map.set("Australia","Canberra");
+
+
+        function getCapital(){
+            var c=document.getElementById("country").value;
+            document.getElementById("city").innerHTML=map.get(c);
+        }
+
+    </script>
+</body>
+</html>

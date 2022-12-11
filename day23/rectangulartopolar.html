@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Rectangle to Polar</title>
+</head>
+<body>
+    <script>
+        var x=Number(prompt("Enter x"));
+        var y=Number(prompt("Enter y"));
+        var radius=Math.sqrt((x*x)+(y*y));
+        var theta=Math.atan(y/x);
+        theta = 180.0* (theta/ 3.141592);
+		document.write("Polar coordinate is: r = "+radius.toFixed(2)+" and theta ="+theta.toFixed(2)+" in degree");
+		
+    </script>
+</body>
+</html>

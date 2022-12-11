@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+					//1. document object and other one is node object
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+						ajaxObj.onreadystatechange=function(){
+							if(ajaxObj.readyState==4 && ajaxObj.status==200){
+							var response=ajaxObj.responseXML;
+							var rootelement=response.documentElement;
+								alert(rootelement.nodeName);
+					var newelement=response.createElement("NEWELEMENT");
+					var value=response.createTextNode("IAM THE VALUE...");
+					
+					newelement.appendChild(value);
+					rootelement.appendChild(newelement);
+		
+					var str=new XMLSerializer().serializeToString(response);
+					console.log((new XMLSerializer()).serializeToString(response));
+					var response=new DOMParser().parseFromString(str, "text/xml");
+					console.log(response);
+					}
+					}
+					ajaxObj.send(null);//where u make the actual request...
+				}
+		
+		</script>
+	
+	<form>
+		<input type="button" onClick="makeAjaxCall('http://localhost:80/ajax/books.xml')" value="MakeAjaxCall"></input>
+	</form>
+	</body>
+</html>

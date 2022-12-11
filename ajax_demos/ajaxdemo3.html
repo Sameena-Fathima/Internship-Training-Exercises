@@ -1,0 +1,34 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+
+					//1. document object and other one is node object
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+					ajaxObj.onreadystatechange=function(){
+						if(ajaxObj.readyState==4 && ajaxObj.status==200){
+							var response=ajaxObj.responseXML;
+							var rootelement=response.documentElement;
+								alert(rootelement.nodeName);
+					var newelement=response.createElement("NEWELEMENT");
+					var value=response.createTextNode("IAM THE VALUE...");
+			
+					newelement.appendChild(value);
+					rootelement.appendChild(newelement);
+		
+					console.log((new XMLSerializer()).serializeToString(response));
+					}
+					}
+					ajaxObj.send(null);//where u make the actual request...
+				}
+		
+		</script>
+	
+	<form>
+		<input type="button" onClick="makeAjaxCall('http://localhost:80/ajaxdemos/day25/books.xml')" value="MakeAjaxCall"></input>
+	</form>
+	
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Social Security Number</title>
+</head>
+<body>
+	Enter the first three digits of a U.S. Social Security number: <input type="number" id="code" value="">
+    <p id="city"></p>
+    <button onclick="search();">Search</button>
+
+
+    <script>
+        var map=new Map();
+        map.set(545,"California");
+        map.set(450,"Texas");
+        map.set(574,"Alaska");
+
+
+
+        function search(){
+            var c=Number(document.getElementById("code").value);
+            document.getElementById("city").innerHTML=map.get(c);
+        }
+
+    </script>
+</body>
+</html>
